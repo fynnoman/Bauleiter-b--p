@@ -73,7 +73,7 @@ export function CTA() {
             <br />
             <span className="text-gold">Dann bewirb dich online.</span>
           </h2>
-          <p className="mt-5 text-base md:text-lg text-white/75 leading-relaxed">
+          <p className="mt-5 text-base md:text-lg text-white leading-relaxed">
             Nicht sicher, ob's passt? Musst du auch nicht. Fülle das Formular
             aus, wir melden uns telefonisch bei dir — danach entscheidest du.
           </p>
@@ -94,7 +94,7 @@ export function CTA() {
                     <div className="text-white font-semibold text-sm">
                       {step.title}
                     </div>
-                    <div className="text-white/60 text-sm mt-0.5 leading-relaxed">
+                    <div className="text-white text-sm mt-0.5 leading-relaxed">
                       {step.body}
                     </div>
                   </div>
@@ -103,19 +103,19 @@ export function CTA() {
             </ol>
 
             <div className="mt-10 pt-6 border-t border-white/10 space-y-2 text-sm">
-              <div className="text-xs uppercase tracking-wider text-white/40 mb-2">
+              <div className="text-xs uppercase tracking-wider text-white mb-2">
                 Direkt anrufen oder schreiben
               </div>
               <a
                 href={`mailto:${brand.contact.email}`}
-                className="flex items-center gap-3 text-white/80 hover:text-gold transition-colors"
+                className="flex items-center gap-3 text-white hover:text-gold transition-colors"
               >
                 <span className="text-gold">✉</span>
                 {brand.contact.email}
               </a>
               <a
                 href={`tel:${brand.contact.phone.replace(/\s/g, "")}`}
-                className="flex items-center gap-3 text-white/80 hover:text-gold transition-colors"
+                className="flex items-center gap-3 text-white hover:text-gold transition-colors"
               >
                 <span className="text-gold">☎</span>
                 {brand.contact.phone}
