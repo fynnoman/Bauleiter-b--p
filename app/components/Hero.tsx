@@ -6,7 +6,7 @@ export function Hero() {
       <div className="absolute inset-0">
         <img
           src={images.hero}
-          alt="Baustelle im Saarland"
+          alt="Tiefbauarbeiten mit Bagger und Kolonne im Saarland"
           className="h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-ink/45 via-ink/20 to-ink/70" />
