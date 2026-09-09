@@ -3,37 +3,31 @@ import { whyDifferent } from "../lib/content";
 export function WhyDifferent() {
   return (
     <section id="warum" className="bg-page">
-      <div className="mx-auto max-w-6xl px-6 py-20 md:py-24">
-        <div className="mb-14 max-w-3xl">
+      <div className="mx-auto max-w-5xl px-6 py-16 md:py-20">
+        <div className="mb-10 max-w-2xl">
           <div className="text-xs font-semibold uppercase tracking-[0.2em] text-accent mb-4">
-            Warum dieser Job anders ist
+            Warum diese Stelle
           </div>
-          <h2 className="text-3xl md:text-5xl font-extrabold text-ink leading-[1.1] tracking-tight">
-            Hier leitest du Baustellen.
-            <br />
-            <span className="text-accent">Nicht Papier.</span>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-ink leading-[1.1] tracking-tight">
+            Was diese Stelle{" "}
+            <span className="text-accent">besonders macht.</span>
           </h2>
-          <p className="mt-6 text-lg text-ink-soft leading-relaxed">
-            Du arbeitest nicht ständig für wechselnde Auftraggeber an
-            wechselnden Orten. Du entwickelst die eigenen Standorte langfristig
-            weiter und hast direkten Einfluss darauf, wie gebaut wird.
-          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           {whyDifferent.map((item) => (
             <div
               key={item.n}
-              className="rounded-2xl bg-white border border-line p-7 hover:border-accent transition-colors"
+              className="rounded-2xl bg-white border border-line p-6 hover:border-accent transition-colors"
             >
-              <div className="flex items-start gap-5">
-                <div className="shrink-0 h-12 w-12 rounded-xl bg-gold/15 flex items-center justify-center">
-                  <span className="text-lg font-extrabold text-gold-dark">
+              <div className="flex items-start gap-4">
+                <div className="shrink-0 h-10 w-10 rounded-xl bg-gold/15 flex items-center justify-center">
+                  <span className="text-sm font-extrabold text-gold-dark">
                     {item.n}
                   </span>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-bold text-ink mb-3 leading-snug">
+                  <h3 className="text-lg font-bold text-ink mb-2 leading-snug">
                     {item.title}
                   </h3>
                   <p className="text-sm text-ink-soft leading-relaxed">

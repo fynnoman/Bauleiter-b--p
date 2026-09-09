@@ -2,40 +2,39 @@ export const brand = {
   agency: "B+P Beratung und Personal",
   agencyShort: "B+P",
   vermittlerNote:
-    "B+P Beratung und Personal begleitet die Besetzung dieser Position für einen etablierten Auftraggeber im Saarland. Nach erfolgreicher Auswahl wirst du direkt und unbefristet beim Unternehmen angestellt – nicht bei B+P.",
+    "B+P Beratung und Personal begleitet die Auswahl. Angestellt wirst du direkt beim Unternehmen — nicht bei uns.",
   contact: {
     email: "bewerbung@bp-beratung.de",
     phone: "+49 (0) 000 000 000",
-    location: "Saarland · Deutschland"
+    location: "Saarland"
   },
   process: [
     {
-      title: "Erstgespräch mit B+P",
-      body: "Unverbindlich und vertraulich. Wir klären, ob die Position zu dir passt."
+      title: "Kurzes Gespräch mit uns",
+      body: "Unverbindlich. Wir klären am Telefon, ob es passt."
     },
     {
-      title: "Vorstellung beim Auftraggeber",
-      body: "Erst nach deiner Freigabe stellen wir dich dem Unternehmen persönlich vor."
+      title: "Vorstellung beim Unternehmen",
+      body: "Erst nach deinem OK stellen wir dich vor."
     },
     {
-      title: "Direktanstellung im Unternehmen",
-      body: "Du wirst direkt und unbefristet beim Auftraggeber angestellt. Ohne Umweg."
+      title: "Direkt beim Unternehmen anfangen",
+      body: "Unbefristet und direkt angestellt. Ohne Umweg."
     }
   ]
 };
 
 export const job = {
-  eyebrow: "Bauleiter / Junior-Bauleiter Tiefbau & Infrastruktur (m/w/d)",
-  headline1: "Bauleiter sein.",
-  headline2: "Nicht dein Leben auf",
-  headline3: "der Autobahn verbringen.",
+  eyebrow: "Bauleiter / Junior-Bauleiter Tiefbau (m/w/d)",
+  headline1: "Bauleiter Tiefbau.",
+  headline2: "Im Saarland.",
   subheadline:
-    "Übernimm langfristige Tief- und Infrastrukturprojekte im Saarland – mit eigenen Kolonnen, modernem Maschinenpark und echter Verantwortung.",
+    "Regional statt Montage. Eigene Kolonne, moderner Maschinenpark. Junior oder erfahren — beides passt.",
   trustPoints: [
-    "Regionale Projekte",
-    "Eigene Kolonnen",
-    "Moderner Maschinenpark",
-    "Eigene Projekte"
+    "Regional",
+    "Eigene Kolonne",
+    "Moderne Maschinen",
+    "Langfristige Projekte"
   ]
 };
 
@@ -43,103 +42,57 @@ export const whyDifferent = [
   {
     n: "01",
     title: "Eigene Standorte",
-    body: "Keine ständig wechselnden Kundenbaustellen. Du begleitest Projekte langfristig und siehst, was du aufgebaut hast."
+    body: "Keine wechselnden Kundenbaustellen. Du entwickelst dieselben Standorte über Jahre weiter."
   },
   {
     n: "02",
-    title: "Regional im Saarland",
-    body: "Anspruchsvolle Bauprojekte ohne permanente Montage und übermäßige Reisetätigkeit."
+    title: "Fast alles im Saarland",
+    body: "Keine dauerhafte Montage. Keine langen Fahrten."
   },
   {
     n: "03",
-    title: "Eigene Mannschaft. Eigene Maschinen.",
-    body: "Du arbeitest direkt mit eigenen Kolonnen und einem modernen Maschinenpark."
+    title: "Eigene Truppe, eigene Maschinen",
+    body: "Direkte Zusammenarbeit mit den eigenen Kolonnen und dem eigenen Maschinenpark."
   },
   {
     n: "04",
-    title: "Wirklich bauen",
-    body: "Der Fokus liegt auf der Umsetzung deiner Projekte – nicht hauptsächlich auf Vertrags-, Nachtrags- und Claim Management."
+    title: "Bauen statt verwalten",
+    body: "Wenig Nachträge und Verträge. Fokus liegt auf der Umsetzung."
   }
 ];
 
 export const tasksNew = [
-  {
-    title: "Projekte steuern",
-    body: "Tief-, Erd-, Infrastruktur- und Deponiebauprojekte organisieren und umsetzen."
-  },
-  {
-    title: "Mannschaften koordinieren",
-    body: "Eigene Kolonnen, Maschinen und ergänzende Nachunternehmer steuern."
-  },
-  {
-    title: "Baustellen organisieren",
-    body: "Abläufe planen und dafür sorgen, dass auf der Baustelle alles zusammenspielt."
-  },
-  {
-    title: "Verantwortung übernehmen",
-    body: "Termine, Qualität und Wirtschaftlichkeit deiner Projekte im Blick behalten."
-  },
-  {
-    title: "Partner koordinieren",
-    body: "Mit Oberbauleitung, Ingenieurbüros, Gutachtern und Behörden zusammenarbeiten."
-  },
-  {
-    title: "Eigene Projekte übernehmen",
-    body: "Je nach Erfahrung schrittweise oder direkt in die eigenständige Projektverantwortung gehen."
-  }
+  { title: "Projekte steuern", body: "Tief-, Erd- und Deponiebauprojekte planen und umsetzen." },
+  { title: "Mannschaften führen", body: "Eigene Kolonnen und Maschinen koordinieren." },
+  { title: "Baustellen organisieren", body: "Abläufe planen, damit auf der Baustelle alles läuft." },
+  { title: "Zahlen im Blick", body: "Termine, Qualität und Kosten steuern." },
+  { title: "Mit Partnern reden", body: "Oberbauleitung, Ingenieurbüros, Gutachter, Behörden." },
+  { title: "Eigene Projekte übernehmen", body: "Schritt für Schritt oder direkt in eigene Bauleitung." }
 ];
 
 export const juniorSenior = {
-  intro:
-    "Du musst nicht schon alles können. Aber du solltest mehr wollen.",
+  intro: "Junior oder erfahren — beides passt.",
   paragraph:
-    "Je nach Erfahrung startest du unterschiedlich in diese Position. Das Ziel ist in beiden Fällen dasselbe.",
+    "Je nach Erfahrung startest du unterschiedlich. Das Ziel bleibt gleich: eigene Projekte, eigene Verantwortung.",
   junior: {
-    label: "Du willst Bauleiter werden?",
-    body: "Du hast bereits Erfahrung im Bau und möchtest den nächsten Schritt machen? Dann arbeitest du zunächst eng mit erfahrenen Kollegen zusammen und übernimmst schrittweise eigene Projekte."
+    label: "Am Anfang deiner Bauleiter-Laufbahn",
+    body: "Du arbeitest mit erfahrenen Kollegen und übernimmst Schritt für Schritt eigene Projekte."
   },
   senior: {
-    label: "Du bist bereits Bauleiter?",
-    body: "Dann steigst du entsprechend deiner Erfahrung direkt mit eigener Projektverantwortung ein und kannst deine Projekte weitgehend selbstständig steuern."
-  },
-  outro: "Das Ziel ist dasselbe: deine eigenen Projekte, deine eigene Verantwortung."
+    label: "Schon Bauleiter-Erfahrung",
+    body: "Du steigst direkt mit eigener Projektverantwortung ein."
+  }
 };
 
 export const benefitsNew: {
   title: string;
   body: string;
-  icon: "pin" | "site" | "team" | "gear" | "target" | "trend";
+  icon: "pin" | "team" | "gear" | "trend";
 }[] = [
-  {
-    title: "Saarland statt Montage",
-    body: "Überwiegend regionale Projekte.",
-    icon: "pin"
-  },
-  {
-    title: "Eigene Standorte",
-    body: "Langfristige Projekte statt ständig wechselnder Kundenbaustellen.",
-    icon: "site"
-  },
-  {
-    title: "Eigene Kolonnen",
-    body: "Direkte Zusammenarbeit mit den eigenen Baustellenmannschaften.",
-    icon: "team"
-  },
-  {
-    title: "Moderne Technik",
-    body: "Moderner Maschinenpark, GPS-Maschinensteuerung und Vermessungstechnik.",
-    icon: "gear"
-  },
-  {
-    title: "Echte Verantwortung",
-    body: "Eigene Projekte und kurze Entscheidungswege.",
-    icon: "target"
-  },
-  {
-    title: "Langfristige Perspektive",
-    body: "Kontinuierliche Weiterentwicklung der eigenen Standorte.",
-    icon: "trend"
-  }
+  { title: "Regional", body: "Baustellen fast alle im Saarland.", icon: "pin" },
+  { title: "Eigene Kolonne", body: "Direkt mit dem Team, kurze Wege.", icon: "team" },
+  { title: "Moderne Technik", body: "Aktueller Maschinenpark, GPS-Steuerung.", icon: "gear" },
+  { title: "Langfristig", body: "Feste Standorte, Projekte über Jahre.", icon: "trend" }
 ];
 
 export const profileFits = [
@@ -152,12 +105,8 @@ export const profileFits = [
   "Altlastensanierung"
 ];
 
-export const profileNote =
-  "Als fachlicher Hintergrund kommen beispielsweise Bau- oder Umweltingenieurwesen, Bautechniker, Meister oder entsprechende praktische Erfahrung infrage.";
-
 export const images = {
   hero: "https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&w=2400&q=80",
   break: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=2400&q=80",
-  cta: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=2400&q=80",
-  detail: "https://images.unsplash.com/photo-1585036156171-384164a8c675?auto=format&fit=crop&w=1600&q=80"
+  cta: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=2400&q=80"
 };

@@ -5,7 +5,6 @@ import { VisualBreak } from "./components/VisualBreak";
 import { Tasks } from "./components/Tasks";
 import { JuniorSenior } from "./components/JuniorSenior";
 import { Benefits } from "./components/Benefits";
-import { Profile } from "./components/Profile";
 import { CTA } from "./components/CTA";
 import { Footer } from "./components/Footer";
 
@@ -19,7 +18,6 @@ export default function Page() {
       <Tasks />
       <JuniorSenior />
       <Benefits />
-      <Profile />
       <CTA />
       <Footer />
     </main>
