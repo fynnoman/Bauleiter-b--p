@@ -4,8 +4,8 @@ export const brand = {
   vermittlerNote:
     "B+P Beratung und Personal begleitet die Auswahl. Angestellt wirst du direkt beim Unternehmen — nicht bei uns.",
   contact: {
-    email: "bewerbung@bp-beratung.de",
-    phone: "+49 (0) 000 000 000",
+    email: "anja.mizouri@b--p.de",
+    phone: "0681 7619925",
     location: "Saarland"
   },
   process: [
