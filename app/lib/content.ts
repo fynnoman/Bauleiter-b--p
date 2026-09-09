@@ -106,7 +106,7 @@ export const profileFits = [
 ];
 
 export const images = {
-  hero: "https://images.unsplash.com/photo-1590674899484-d5640e854abe?auto=format&fit=crop&w=2400&q=80",
-  break: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=2400&q=80",
-  cta: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=2400&q=80"
+  hero: "/images/bauleiter-hero.jpg",
+  break: "/images/bauleiter-team.jpg",
+  cta: "/images/bauleiter-hero.jpg"
 };
