@@ -1,0 +1,146 @@
+<!-- ============================================================
+     MODUL 03 – WARUM DIESE STELLE
+     Drop-Zone: volle Breite (12/12)
+     Enthält: Eyebrow + Headline + 4 Karten mit Nummern-Tiles
+              (Eigene Standorte / Regional / Eigene Truppe / Bauen statt verwalten)
+     ============================================================ -->
+<section id="warum" class="bp-warum">
+  <div class="bp-warum__inner">
+    <div class="bp-warum__head">
+      <div class="bp-warum__eyebrow">Warum diese Stelle</div>
+      <h2 class="bp-warum__title">
+        Was diese Stelle
+        <span class="bp-warum__title--accent">besonders macht.</span>
+      </h2>
+    </div>
+
+    <div class="bp-warum__grid">
+      <div class="bp-warum__card">
+        <div class="bp-warum__num">01</div>
+        <div>
+          <h3 class="bp-warum__card-title">Eigene Standorte</h3>
+          <p class="bp-warum__card-body">Keine wechselnden Kundenbaustellen. Du entwickelst dieselben Standorte über Jahre weiter.</p>
+        </div>
+      </div>
+
+      <div class="bp-warum__card">
+        <div class="bp-warum__num">02</div>
+        <div>
+          <h3 class="bp-warum__card-title">Fast alles im Saarland</h3>
+          <p class="bp-warum__card-body">Keine dauerhafte Montage. Keine langen Fahrten.</p>
+        </div>
+      </div>
+
+      <div class="bp-warum__card">
+        <div class="bp-warum__num">03</div>
+        <div>
+          <h3 class="bp-warum__card-title">Eigene Truppe, eigene Maschinen</h3>
+          <p class="bp-warum__card-body">Direkte Zusammenarbeit mit den eigenen Kolonnen und dem eigenen Maschinenpark.</p>
+        </div>
+      </div>
+
+      <div class="bp-warum__card">
+        <div class="bp-warum__num">04</div>
+        <div>
+          <h3 class="bp-warum__card-title">Bauen statt verwalten</h3>
+          <p class="bp-warum__card-body">Wenig Nachträge und Verträge. Fokus liegt auf der Umsetzung.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* Schriften werden zentral in 01-nav geladen */
+.bp-warum{
+  --page:#FAF7F1;
+  --white:#FFFFFF;
+  --ink:#1A1A1A;
+  --ink-soft:#2E2E2C;
+  --line:#E5E1D8;
+  --accent:#2F6DB3;
+  --gold:#EDA53F;
+  --gold-dark:#C88526;
+  --font-sans:"Inter Tight","Inter",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --ease-out:cubic-bezier(0.23,1,0.32,1);
+
+  /* Full-Bleed */
+  width:100vw;
+  margin-left:50%;
+  transform:translateX(-50%);
+  max-width:100vw;
+
+  background:var(--page);
+  color:var(--ink);
+  font-family:var(--font-sans);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.bp-warum *,
+.bp-warum *::before,
+.bp-warum *::after{ box-sizing:border-box; }
+
+.bp-warum__inner{
+  max-width:1152px;
+  margin:0 auto;
+  padding:clamp(64px, 7vw, 96px) clamp(24px, 4vw, 40px);
+}
+
+.bp-warum__head{ max-width:640px; margin-bottom:40px; }
+.bp-warum__eyebrow{
+  font-weight:600; font-size:11.2px;
+  letter-spacing:.2em; text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:16px;
+}
+.bp-warum__title{
+  margin:0;
+  font-weight:800;
+  font-size:clamp(28px, 3.6vw, 40px);
+  line-height:1.1;
+  letter-spacing:-0.02em;
+}
+.bp-warum__title--accent{ color:var(--accent); display:inline; }
+
+.bp-warum__grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+.bp-warum__card{
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:28px;
+  display:flex; gap:20px;
+  transition:border-color 220ms var(--ease-out);
+}
+.bp-warum__num{
+  flex-shrink:0;
+  width:40px; height:40px;
+  border-radius:12px;
+  background:rgba(237,165,63,.15);
+  color:var(--gold-dark);
+  font-weight:800; font-size:14px;
+  display:flex; align-items:center; justify-content:center;
+}
+.bp-warum__card-title{
+  margin:0 0 8px;
+  font-weight:700; font-size:18px;
+  line-height:1.3;
+}
+.bp-warum__card-body{
+  margin:0;
+  font-size:14px; line-height:1.6;
+  color:var(--ink-soft);
+}
+@media (hover:hover) and (pointer:fine){
+  .bp-warum__card:hover{ border-color:var(--accent); }
+}
+
+@media (max-width:768px){
+  .bp-warum__grid{ grid-template-columns:1fr; }
+  .bp-warum__card{ padding:24px; gap:16px; }
+}
+</style>

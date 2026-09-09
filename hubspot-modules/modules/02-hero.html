@@ -1,0 +1,172 @@
+<!-- ============================================================
+     MODUL 02 – HERO
+     Drop-Zone: volle Breite, direkt unter der Nav (12/12)
+     Enthält: Full-Bleed Baustellen-Foto, Chip mit Position,
+              große Headline, Subheadline, Bewerben-CTA,
+              Trust-Punkte-Leiste.
+     BILDER TAUSCHEN: bauleiter-hero.jpg über HubSpot File Manager
+                      hochladen und URL im <img src="..."> einsetzen.
+     ============================================================ -->
+<section id="top" class="bp-hero">
+  <div class="bp-hero__bg" aria-hidden="true">
+    <img src="https://personalberatung.b--p.de/hubfs/bauleiter-tiefbau/bauleiter-hero.jpg" alt="">
+    <span class="bp-hero__overlay bp-hero__overlay--v"></span>
+    <span class="bp-hero__overlay bp-hero__overlay--h"></span>
+  </div>
+
+  <div class="bp-hero__inner">
+    <div class="bp-hero__chip">
+      <span class="bp-hero__dot"></span>
+      Bauleiter / Junior-Bauleiter Tiefbau (m/w/d)
+    </div>
+
+    <h1 class="bp-hero__title">
+      Bauleiter Tiefbau.
+      <br>
+      <span class="bp-hero__title--accent">Im Saarland.</span>
+    </h1>
+
+    <p class="bp-hero__sub">
+      Regional statt Montage. Eigene Kolonne, moderner Maschinenpark.
+      Junior oder erfahren — beides passt.
+    </p>
+
+    <div class="bp-hero__ctas">
+      <a href="#kontakt" class="bp-hero__btn">
+        Jetzt online bewerben
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+    <ul class="bp-hero__trust">
+      <li><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2 7l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Regional</li>
+      <li><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2 7l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Eigene Kolonne</li>
+      <li><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2 7l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Moderne Maschinen</li>
+      <li><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2 7l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Langfristige Projekte</li>
+    </ul>
+  </div>
+</section>
+
+<style>
+/* Schriften werden zentral in 01-nav geladen */
+.bp-hero{
+  --ink:#0F1114;
+  --gold:#EDA53F;
+  --font-sans:"Inter Tight","Inter",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --ease-out:cubic-bezier(0.23,1,0.32,1);
+
+  /* Full-Bleed */
+  width:100vw;
+  margin-left:50%;
+  transform:translateX(-50%);
+  max-width:100vw;
+
+  position:relative;
+  overflow:hidden;
+  background:var(--ink);
+  color:#fff;
+  font-family:var(--font-sans);
+  font-size:16px;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+.bp-hero *,
+.bp-hero *::before,
+.bp-hero *::after{ box-sizing:border-box; }
+.bp-hero img,
+.bp-hero svg{ display:block; max-width:100%; }
+.bp-hero a{ color:inherit; text-decoration:none; }
+
+.bp-hero__bg{ position:absolute; inset:0; z-index:0; }
+.bp-hero__bg img{
+  position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+}
+.bp-hero__overlay{ position:absolute; inset:0; pointer-events:none; }
+.bp-hero__overlay--v{
+  background:linear-gradient(180deg, rgba(15,17,20,.45) 0%, rgba(15,17,20,.20) 45%, rgba(15,17,20,.70) 100%);
+}
+.bp-hero__overlay--h{
+  background:linear-gradient(90deg, rgba(15,17,20,.60) 0%, rgba(15,17,20,0) 55%);
+}
+
+.bp-hero__inner{
+  position:relative; z-index:1;
+  max-width:1152px;
+  margin:0 auto;
+  padding:clamp(56px, 8vw, 96px) clamp(24px, 4vw, 40px) clamp(72px, 8vw, 112px);
+}
+
+/* Chip */
+.bp-hero__chip{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:7px 16px;
+  background:rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.25);
+  border-radius:9999px;
+  font-weight:600; font-size:11.2px;
+  letter-spacing:.14em; text-transform:uppercase;
+  margin-bottom:24px;
+}
+.bp-hero__dot{
+  width:6px; height:6px; border-radius:50%;
+  background:var(--gold);
+}
+
+/* Title */
+.bp-hero__title{
+  margin:0;
+  font-family:var(--font-sans);
+  font-weight:800;
+  font-size:clamp(44px, 6.5vw, 84px);
+  line-height:1.02;
+  letter-spacing:-0.02em;
+  text-shadow:0 2px 12px rgba(0,0,0,.5);
+}
+.bp-hero__title--accent{ color:var(--gold); }
+
+/* Sub */
+.bp-hero__sub{
+  margin:24px 0 0;
+  max-width:640px;
+  font-size:clamp(17px, 1.6vw, 20px);
+  line-height:1.35;
+  color:rgba(255,255,255,.85);
+}
+
+/* CTAs */
+.bp-hero__ctas{
+  margin-top:32px;
+  display:flex; flex-wrap:wrap; gap:12px;
+}
+.bp-hero__btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  padding:14px 28px;
+  background:var(--gold); color:var(--ink);
+  border:0; border-radius:9999px;
+  font-family:var(--font-sans); font-weight:700; font-size:15.5px;
+  line-height:1;
+  transition:background-color 220ms var(--ease-out), color 220ms var(--ease-out), transform 200ms var(--ease-out);
+}
+.bp-hero__btn svg{ width:14px; height:14px; transition:transform 220ms var(--ease-out); }
+.bp-hero__btn:hover svg{ transform:translateX(3px); }
+.bp-hero__btn:active{ transform:scale(.97); }
+@media (hover:hover) and (pointer:fine){
+  .bp-hero__btn:hover{ background:#fff; }
+}
+
+/* Trust */
+.bp-hero__trust{
+  list-style:none; margin:40px 0 0; padding:32px 0 0;
+  border-top:1px solid rgba(255,255,255,.10);
+  display:flex; flex-wrap:wrap; gap:32px 24px;
+  color:rgba(255,255,255,.78);
+  font-size:14px;
+}
+.bp-hero__trust li{ display:inline-flex; align-items:center; gap:8px; }
+.bp-hero__trust svg{ width:12px; height:12px; color:var(--gold); }
+
+@media (max-width:640px){
+  .bp-hero__inner{ padding:56px 20px 72px; }
+  .bp-hero__trust{ gap:16px 20px; font-size:13.5px; }
+}
+</style>

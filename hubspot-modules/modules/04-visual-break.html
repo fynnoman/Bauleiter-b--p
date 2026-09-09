@@ -1,0 +1,91 @@
+<!-- ============================================================
+     MODUL 04 – VISUAL BREAK
+     Drop-Zone: volle Breite (12/12)
+     Enthält: Full-Bleed Baustellen-Foto (zwei Bauleiter),
+              großes Statement links, dezente Ergänzung darunter.
+     BILDER TAUSCHEN: bauleiter-team.jpg über HubSpot File Manager
+                      hochladen und URL im <img src="..."> einsetzen.
+     ============================================================ -->
+<section class="bp-break">
+  <div class="bp-break__bg" aria-hidden="true">
+    <img src="https://personalberatung.b--p.de/hubfs/bauleiter-tiefbau/bauleiter-team.jpg" alt="">
+    <span class="bp-break__overlay bp-break__overlay--h"></span>
+    <span class="bp-break__overlay bp-break__overlay--v"></span>
+  </div>
+
+  <div class="bp-break__inner">
+    <h2 class="bp-break__title">
+      Deine Baustelle.
+      <br>Deine Truppe.
+      <br><span class="bp-break__title--accent">Deine Verantwortung.</span>
+    </h2>
+    <p class="bp-break__sub">
+      Deponieerweiterungen, Rekultivierungen, Erd-, Tief- und
+      Infrastrukturmaßnahmen.
+    </p>
+  </div>
+</section>
+
+<style>
+/* Schriften werden zentral in 01-nav geladen */
+.bp-break{
+  --ink:#0F1114;
+  --gold:#EDA53F;
+  --font-sans:"Inter Tight","Inter",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+
+  width:100vw;
+  margin-left:50%;
+  transform:translateX(-50%);
+  max-width:100vw;
+
+  position:relative;
+  overflow:hidden;
+  background:var(--ink);
+  color:#fff;
+  font-family:var(--font-sans);
+  font-size:16px;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+.bp-break *,
+.bp-break *::before,
+.bp-break *::after{ box-sizing:border-box; }
+.bp-break img{ display:block; max-width:100%; }
+
+.bp-break__bg{ position:absolute; inset:0; z-index:0; }
+.bp-break__bg img{
+  position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+}
+.bp-break__overlay{ position:absolute; inset:0; pointer-events:none; }
+.bp-break__overlay--h{
+  background:linear-gradient(90deg, rgba(15,17,20,.75) 0%, rgba(15,17,20,.30) 45%, rgba(15,17,20,.10) 100%);
+}
+.bp-break__overlay--v{
+  background:linear-gradient(180deg, rgba(15,17,20,.20) 0%, rgba(15,17,20,0) 40%, rgba(15,17,20,.40) 100%);
+}
+
+.bp-break__inner{
+  position:relative; z-index:1;
+  max-width:1152px;
+  margin:0 auto;
+  padding:clamp(96px, 12vw, 160px) clamp(24px, 4vw, 40px);
+}
+
+.bp-break__title{
+  margin:0;
+  font-weight:800;
+  font-size:clamp(36px, 5.5vw, 72px);
+  line-height:1.05;
+  letter-spacing:-0.02em;
+  text-shadow:0 2px 12px rgba(0,0,0,.5);
+  max-width:840px;
+}
+.bp-break__title--accent{ color:var(--gold); }
+
+.bp-break__sub{
+  margin:32px 0 0;
+  max-width:560px;
+  font-size:clamp(16px, 1.4vw, 18px);
+  color:rgba(255,255,255,.70);
+}
+</style>

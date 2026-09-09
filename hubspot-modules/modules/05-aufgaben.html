@@ -1,0 +1,144 @@
+<!-- ============================================================
+     MODUL 05 – AUFGABEN
+     Drop-Zone: volle Breite (12/12)
+     Enthält: Eyebrow + Headline + 3x2 Grid mit 6 Aufgaben-Karten
+              (nummeriert)
+     ============================================================ -->
+<section id="aufgaben" class="bp-tasks">
+  <div class="bp-tasks__inner">
+    <div class="bp-tasks__head">
+      <div class="bp-tasks__eyebrow">Was du machst</div>
+      <h2 class="bp-tasks__title">
+        Deine Baustelle,
+        <span class="bp-tasks__title--accent">deine Entscheidungen.</span>
+      </h2>
+    </div>
+
+    <div class="bp-tasks__grid">
+      <div class="bp-tasks__card">
+        <div class="bp-tasks__num">01</div>
+        <h3 class="bp-tasks__card-title">Projekte steuern</h3>
+        <p class="bp-tasks__card-body">Tief-, Erd- und Deponiebauprojekte planen und umsetzen.</p>
+      </div>
+      <div class="bp-tasks__card">
+        <div class="bp-tasks__num">02</div>
+        <h3 class="bp-tasks__card-title">Mannschaften führen</h3>
+        <p class="bp-tasks__card-body">Eigene Kolonnen und Maschinen koordinieren.</p>
+      </div>
+      <div class="bp-tasks__card">
+        <div class="bp-tasks__num">03</div>
+        <h3 class="bp-tasks__card-title">Baustellen organisieren</h3>
+        <p class="bp-tasks__card-body">Abläufe planen, damit auf der Baustelle alles läuft.</p>
+      </div>
+      <div class="bp-tasks__card">
+        <div class="bp-tasks__num">04</div>
+        <h3 class="bp-tasks__card-title">Zahlen im Blick</h3>
+        <p class="bp-tasks__card-body">Termine, Qualität und Kosten steuern.</p>
+      </div>
+      <div class="bp-tasks__card">
+        <div class="bp-tasks__num">05</div>
+        <h3 class="bp-tasks__card-title">Mit Partnern reden</h3>
+        <p class="bp-tasks__card-body">Oberbauleitung, Ingenieurbüros, Gutachter, Behörden.</p>
+      </div>
+      <div class="bp-tasks__card">
+        <div class="bp-tasks__num">06</div>
+        <h3 class="bp-tasks__card-title">Eigene Projekte übernehmen</h3>
+        <p class="bp-tasks__card-body">Schritt für Schritt oder direkt in eigene Bauleitung.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* Schriften werden zentral in 01-nav geladen */
+.bp-tasks{
+  --page:#FAF7F1;
+  --white:#FFFFFF;
+  --ink:#1A1A1A;
+  --ink-soft:#2E2E2C;
+  --line:#E5E1D8;
+  --accent:#2F6DB3;
+  --gold-dark:#C88526;
+  --font-sans:"Inter Tight","Inter",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --ease-out:cubic-bezier(0.23,1,0.32,1);
+
+  width:100vw;
+  margin-left:50%;
+  transform:translateX(-50%);
+  max-width:100vw;
+
+  background:var(--page);
+  color:var(--ink);
+  font-family:var(--font-sans);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.bp-tasks *,
+.bp-tasks *::before,
+.bp-tasks *::after{ box-sizing:border-box; }
+
+.bp-tasks__inner{
+  max-width:1152px;
+  margin:0 auto;
+  padding:clamp(64px, 7vw, 96px) clamp(24px, 4vw, 40px);
+}
+
+.bp-tasks__head{ max-width:640px; margin-bottom:40px; }
+.bp-tasks__eyebrow{
+  font-weight:600; font-size:11.2px;
+  letter-spacing:.2em; text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:16px;
+}
+.bp-tasks__title{
+  margin:0;
+  font-weight:800;
+  font-size:clamp(28px, 3.6vw, 40px);
+  line-height:1.1;
+  letter-spacing:-0.02em;
+}
+.bp-tasks__title--accent{ color:var(--accent); }
+
+.bp-tasks__grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:12px;
+}
+.bp-tasks__card{
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:20px;
+  transition:border-color 220ms var(--ease-out);
+}
+.bp-tasks__num{
+  width:32px; height:32px;
+  border-radius:8px;
+  background:rgba(237,165,63,.15);
+  color:var(--gold-dark);
+  font-weight:800; font-size:12px;
+  display:flex; align-items:center; justify-content:center;
+  margin-bottom:12px;
+}
+.bp-tasks__card-title{
+  margin:0 0 6px;
+  font-weight:700; font-size:16px;
+  line-height:1.3;
+}
+.bp-tasks__card-body{
+  margin:0;
+  font-size:14px; line-height:1.6;
+  color:var(--ink-soft);
+}
+@media (hover:hover) and (pointer:fine){
+  .bp-tasks__card:hover{ border-color:var(--accent); }
+}
+
+@media (max-width:900px){
+  .bp-tasks__grid{ grid-template-columns:1fr 1fr; }
+}
+@media (max-width:560px){
+  .bp-tasks__grid{ grid-template-columns:1fr; }
+}
+</style>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>b+p · Bauleiter Tiefbau — HubSpot-Module Preview</title>
+  <style>
+    html, body { margin:0; padding:0; background:#FAF7F1; }
+    body { font-family:"Inter Tight", system-ui, sans-serif; }
+  </style>
+</head>
+<body>
+
+<!-- Modul 01 -->
+<div data-module="01-nav"></div>
+<!-- Modul 02 -->
+<div data-module="02-hero"></div>
+<!-- Modul 03 -->
+<div data-module="03-warum-anders"></div>
+<!-- Modul 04 -->
+<div data-module="04-visual-break"></div>
+<!-- Modul 05 -->
+<div data-module="05-aufgaben"></div>
+<!-- Modul 06 -->
+<div data-module="06-junior-senior"></div>
+<!-- Modul 07 -->
+<div data-module="07-benefits"></div>
+<!-- Modul 08 -->
+<div data-module="08-kontakt"></div>
+<!-- Modul 09 -->
+<div data-module="09-footer"></div>
+
+<script>
+(async function(){
+  var slots = document.querySelectorAll('[data-module]');
+  for(var i = 0; i < slots.length; i++){
+    var slot = slots[i];
+    var name = slot.getAttribute('data-module');
+    try {
+      var res = await fetch('./modules/' + name + '.html');
+      var html = await res.text();
+      slot.innerHTML = html;
+      // Re-execute inline scripts (fetch + innerHTML skips them)
+      slot.querySelectorAll('script').forEach(function(oldScript){
+        var s = document.createElement('script');
+        for(var j = 0; j < oldScript.attributes.length; j++){
+          var a = oldScript.attributes[j];
+          s.setAttribute(a.name, a.value);
+        }
+        s.text = oldScript.textContent;
+        oldScript.parentNode.replaceChild(s, oldScript);
+      });
+    } catch(err){
+      slot.innerHTML = '<div style="padding:20px;background:#fee;color:#900;font-family:monospace">' + name + ': ' + err + '</div>';
+    }
+  }
+})();
+</script>
+</body>
+</html>

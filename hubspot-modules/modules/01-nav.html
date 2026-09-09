@@ -1,0 +1,79 @@
+<!-- ============================================================
+     MODUL 01 – NAV / HEADER
+     Drop-Zone: volle Breite, erste Zone von oben (12/12)
+     Enthält: b+p Logo links + "Jetzt bewerben" Button rechts
+              Lädt zentrale Schriften (Inter Tight) für alle folgenden Module.
+     BILDER TAUSCHEN: bp-logo.jpg über HubSpot File Manager hochladen
+                      und URL im <img src="..."> einsetzen.
+     ============================================================ -->
+<section class="bp-nav">
+  <div class="bp-nav__inner">
+    <a class="bp-nav__brand" href="#top" aria-label="b+p Beratung und Personal">
+      <img src="https://personalberatung.b--p.de/hubfs/bauleiter-tiefbau/bp-logo.jpg" alt="b+p Beratung und Personal">
+    </a>
+    <a href="#kontakt" class="bp-nav__cta">Jetzt bewerben</a>
+  </div>
+</section>
+
+<style>
+/* Zentrale Schriften – alle Module nutzen sie mit */
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&display=swap");
+
+.bp-nav{
+  --page:#FAF7F1;
+  --ink:#1A1A1A;
+  --ink-muted:#6B6B68;
+  --line:#E5E1D8;
+  --accent:#2F6DB3;
+  --accent-dark:#245388;
+  --font-sans:"Inter Tight","Inter",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --ease-out:cubic-bezier(0.23,1,0.32,1);
+
+  /* Full-Bleed */
+  width:100vw;
+  margin-left:50%;
+  transform:translateX(-50%);
+  max-width:100vw;
+
+  background:var(--page);
+  border-bottom:1px solid var(--line);
+  font-family:var(--font-sans);
+  color:var(--ink);
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+.bp-nav *,
+.bp-nav *::before,
+.bp-nav *::after{ box-sizing:border-box; }
+.bp-nav img{ display:block; max-width:100%; }
+.bp-nav a{ color:inherit; text-decoration:none; }
+
+.bp-nav__inner{
+  max-width:1152px;
+  margin:0 auto;
+  padding:16px 24px;
+  display:flex; align-items:center; justify-content:space-between;
+  gap:16px;
+}
+
+.bp-nav__brand{ display:inline-flex; align-items:center; line-height:0; }
+.bp-nav__brand img{ height:48px; width:auto; }
+
+.bp-nav__cta{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:10px 20px;
+  font-family:var(--font-sans); font-weight:500; font-size:14px;
+  color:#fff; background:var(--accent);
+  border:0; border-radius:9999px;
+  transition:background-color 220ms var(--ease-out);
+}
+@media (hover:hover) and (pointer:fine){
+  .bp-nav__cta:hover{ background:var(--accent-dark); }
+}
+
+@media (max-width:640px){
+  .bp-nav__inner{ padding:14px 16px; }
+  .bp-nav__brand img{ height:40px; }
+  .bp-nav__cta{ padding:9px 16px; font-size:13px; }
+}
+</style>

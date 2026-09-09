@@ -1,0 +1,170 @@
+<!-- ============================================================
+     MODUL 06 – JUNIOR ODER ERFAHREN + PASSENDE BEREICHE
+     Drop-Zone: volle Breite (12/12)
+     Enthält: Eyebrow + Headline + 2 Weg-Karten (Gold + Blau)
+              + Bau-Bereiche als Pill-Tags mit Fußnote
+     ============================================================ -->
+<section class="bp-paths">
+  <div class="bp-paths__inner">
+    <div class="bp-paths__head">
+      <div class="bp-paths__eyebrow">Passt zu dir?</div>
+      <h2 class="bp-paths__title">Junior oder erfahren — beides passt.</h2>
+      <p class="bp-paths__sub">
+        Je nach Erfahrung startest du unterschiedlich. Das Ziel bleibt gleich:
+        eigene Projekte, eigene Verantwortung.
+      </p>
+    </div>
+
+    <div class="bp-paths__grid">
+      <div class="bp-paths__card bp-paths__card--gold">
+        <h3 class="bp-paths__card-title">Am Anfang deiner Bauleiter-Laufbahn</h3>
+        <p class="bp-paths__card-body">
+          Du arbeitest mit erfahrenen Kollegen und übernimmst Schritt für
+          Schritt eigene Projekte.
+        </p>
+      </div>
+      <div class="bp-paths__card bp-paths__card--blue">
+        <h3 class="bp-paths__card-title">Schon Bauleiter-Erfahrung</h3>
+        <p class="bp-paths__card-body">
+          Du steigst entsprechend deiner Erfahrung direkt mit eigener
+          Projektverantwortung ein.
+        </p>
+      </div>
+    </div>
+
+    <div class="bp-paths__pillbox">
+      <div class="bp-paths__pill-label">Aus einem dieser Bereiche? Dann meld dich einfach:</div>
+      <div class="bp-paths__pills">
+        <span class="bp-paths__pill">Tiefbau</span>
+        <span class="bp-paths__pill">Erdbau</span>
+        <span class="bp-paths__pill">Straßenbau</span>
+        <span class="bp-paths__pill">Infrastrukturbau</span>
+        <span class="bp-paths__pill">Spezialtiefbau</span>
+        <span class="bp-paths__pill">Rückbau</span>
+        <span class="bp-paths__pill">Altlastensanierung</span>
+      </div>
+      <p class="bp-paths__note">Erfahrung im Deponiebau brauchst du nicht.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+/* Schriften werden zentral in 01-nav geladen */
+.bp-paths{
+  --page:#FAF7F1;
+  --white:#FFFFFF;
+  --ink:#1A1A1A;
+  --ink-soft:#2E2E2C;
+  --ink-muted:#6B6B68;
+  --line:#E5E1D8;
+  --accent:#2F6DB3;
+  --gold:#EDA53F;
+  --gold-dark:#C88526;
+  --font-sans:"Inter Tight","Inter",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --ease-out:cubic-bezier(0.23,1,0.32,1);
+
+  width:100vw;
+  margin-left:50%;
+  transform:translateX(-50%);
+  max-width:100vw;
+
+  background:var(--white);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  color:var(--ink);
+  font-family:var(--font-sans);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.bp-paths *,
+.bp-paths *::before,
+.bp-paths *::after{ box-sizing:border-box; }
+
+.bp-paths__inner{
+  max-width:1152px;
+  margin:0 auto;
+  padding:clamp(64px, 7vw, 96px) clamp(24px, 4vw, 40px);
+}
+
+.bp-paths__head{ max-width:640px; margin-bottom:40px; }
+.bp-paths__eyebrow{
+  font-weight:600; font-size:11.2px;
+  letter-spacing:.2em; text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:16px;
+}
+.bp-paths__title{
+  margin:0;
+  font-weight:800;
+  font-size:clamp(28px, 3.6vw, 40px);
+  line-height:1.1;
+  letter-spacing:-0.02em;
+}
+.bp-paths__sub{
+  margin:20px 0 0;
+  font-size:16px; line-height:1.65;
+  color:var(--ink-soft);
+}
+
+.bp-paths__grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-bottom:32px;
+}
+.bp-paths__card{
+  border:1px solid; border-radius:16px;
+  padding:24px;
+}
+.bp-paths__card--gold{
+  background:rgba(237,165,63,.10);
+  border-color:rgba(237,165,63,.40);
+}
+.bp-paths__card--blue{
+  background:rgba(47,109,179,.05);
+  border-color:rgba(47,109,179,.30);
+}
+.bp-paths__card-title{
+  margin:0 0 12px;
+  font-weight:800; font-size:20px;
+  line-height:1.2;
+  letter-spacing:-0.01em;
+}
+.bp-paths__card-body{
+  margin:0;
+  font-size:14px; line-height:1.6;
+  color:var(--ink-soft);
+}
+
+.bp-paths__pillbox{
+  background:var(--page);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:24px;
+}
+.bp-paths__pill-label{
+  font-weight:600; font-size:14px; color:var(--ink);
+  margin-bottom:12px;
+}
+.bp-paths__pills{
+  display:flex; flex-wrap:wrap; gap:8px;
+}
+.bp-paths__pill{
+  display:inline-flex; align-items:center;
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:9999px;
+  padding:6px 14px;
+  font-weight:500; font-size:14px;
+  color:var(--ink);
+}
+.bp-paths__note{
+  margin:16px 0 0;
+  font-size:12.5px; color:var(--ink-muted);
+}
+
+@media (max-width:768px){
+  .bp-paths__grid{ grid-template-columns:1fr; }
+}
+</style>

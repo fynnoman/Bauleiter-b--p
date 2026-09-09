@@ -1,0 +1,167 @@
+<!-- ============================================================
+     MODUL 07 – BENEFITS
+     Drop-Zone: volle Breite (12/12)
+     Enthält: Eyebrow + Headline + 4 Benefit-Karten mit Icons
+              (Regional / Eigene Kolonne / Moderne Technik / Langfristig)
+              + Dienstwagen-Zeile darunter.
+     ============================================================ -->
+<section id="benefits" class="bp-benefits">
+  <div class="bp-benefits__inner">
+    <div class="bp-benefits__head">
+      <div class="bp-benefits__eyebrow">Was du davon hast</div>
+      <h2 class="bp-benefits__title">Die wichtigsten Punkte.</h2>
+    </div>
+
+    <div class="bp-benefits__grid">
+      <div class="bp-benefits__card">
+        <div class="bp-benefits__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 22s-7-7.5-7-13a7 7 0 1 1 14 0c0 5.5-7 13-7 13Z"/>
+            <circle cx="12" cy="9" r="2.5"/>
+          </svg>
+        </div>
+        <h3 class="bp-benefits__card-title">Regional</h3>
+        <p class="bp-benefits__card-body">Baustellen fast alle im Saarland.</p>
+      </div>
+
+      <div class="bp-benefits__card">
+        <div class="bp-benefits__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="9" cy="8" r="3"/>
+            <circle cx="17" cy="10" r="2.5"/>
+            <path d="M3 20c0-3 3-5 6-5s6 2 6 5"/>
+            <path d="M15 20c0-2 2-3.5 4-3.5s2 1.5 2 3.5"/>
+          </svg>
+        </div>
+        <h3 class="bp-benefits__card-title">Eigene Kolonne</h3>
+        <p class="bp-benefits__card-body">Direkte Zusammenarbeit mit dem Team.</p>
+      </div>
+
+      <div class="bp-benefits__card">
+        <div class="bp-benefits__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M12 3v3M12 18v3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M3 12h3M18 12h3M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/>
+          </svg>
+        </div>
+        <h3 class="bp-benefits__card-title">Moderne Technik</h3>
+        <p class="bp-benefits__card-body">Aktueller Maschinenpark, GPS-Steuerung.</p>
+      </div>
+
+      <div class="bp-benefits__card">
+        <div class="bp-benefits__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 17l6-6 4 4 8-8"/>
+            <path d="M15 7h6v6"/>
+          </svg>
+        </div>
+        <h3 class="bp-benefits__card-title">Langfristig</h3>
+        <p class="bp-benefits__card-body">Feste Standorte, Projekte über Jahre.</p>
+      </div>
+    </div>
+
+    <p class="bp-benefits__note">
+      Dienstwagen je nach Position und Erfahrung möglich.
+    </p>
+  </div>
+</section>
+
+<style>
+/* Schriften werden zentral in 01-nav geladen */
+.bp-benefits{
+  --page:#FAF7F1;
+  --white:#FFFFFF;
+  --ink:#1A1A1A;
+  --ink-soft:#2E2E2C;
+  --ink-muted:#6B6B68;
+  --line:#E5E1D8;
+  --accent:#2F6DB3;
+  --gold-dark:#C88526;
+  --font-sans:"Inter Tight","Inter",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --ease-out:cubic-bezier(0.23,1,0.32,1);
+
+  width:100vw;
+  margin-left:50%;
+  transform:translateX(-50%);
+  max-width:100vw;
+
+  background:var(--page);
+  color:var(--ink);
+  font-family:var(--font-sans);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.bp-benefits *,
+.bp-benefits *::before,
+.bp-benefits *::after{ box-sizing:border-box; }
+.bp-benefits svg{ display:block; }
+
+.bp-benefits__inner{
+  max-width:1152px;
+  margin:0 auto;
+  padding:clamp(64px, 7vw, 96px) clamp(24px, 4vw, 40px);
+}
+
+.bp-benefits__head{ max-width:640px; margin-bottom:40px; }
+.bp-benefits__eyebrow{
+  font-weight:600; font-size:11.2px;
+  letter-spacing:.2em; text-transform:uppercase;
+  color:var(--accent);
+  margin-bottom:16px;
+}
+.bp-benefits__title{
+  margin:0;
+  font-weight:800;
+  font-size:clamp(28px, 3.6vw, 40px);
+  line-height:1.1;
+  letter-spacing:-0.02em;
+}
+
+.bp-benefits__grid{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:12px;
+}
+.bp-benefits__card{
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:20px;
+  transition:border-color 220ms var(--ease-out);
+}
+.bp-benefits__icon{
+  width:40px; height:40px;
+  border-radius:12px;
+  background:rgba(237,165,63,.15);
+  color:var(--gold-dark);
+  display:flex; align-items:center; justify-content:center;
+  margin-bottom:16px;
+}
+.bp-benefits__icon svg{ width:20px; height:20px; }
+.bp-benefits__card-title{
+  margin:0 0 4px;
+  font-weight:700; font-size:16px;
+  line-height:1.3;
+}
+.bp-benefits__card-body{
+  margin:0;
+  font-size:14px; line-height:1.6;
+  color:var(--ink-soft);
+}
+@media (hover:hover) and (pointer:fine){
+  .bp-benefits__card:hover{ border-color:var(--accent); }
+}
+
+.bp-benefits__note{
+  margin:24px 0 0;
+  font-size:14px; color:var(--ink-muted);
+}
+
+@media (max-width:1024px){
+  .bp-benefits__grid{ grid-template-columns:1fr 1fr; }
+}
+@media (max-width:520px){
+  .bp-benefits__grid{ grid-template-columns:1fr; }
+}
+</style>

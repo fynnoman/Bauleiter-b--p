@@ -1,0 +1,534 @@
+<!-- ============================================================
+     MODUL 08 – KONTAKT / BEWERBUNGSFORMULAR
+     Drop-Zone: volle Breite (12/12)
+     Enthält: Full-Bleed dunkle Section mit CTA-Headline links,
+              3-Schritt-Ablauf + Kontaktdaten (Anja Mizouri),
+              Bewerbungsformular mit optionalem Lebenslauf-Upload.
+
+     WICHTIG: Der Formular-Handler unten sendet standardmäßig an
+              /api/bewerbung. In HubSpot: entweder
+              - Endpoint anpassen (data-endpoint="...")
+              - oder komplettes Formular durch HubSpot-Form ersetzen.
+     ============================================================ -->
+<section id="kontakt" class="bp-contact">
+  <div class="bp-contact__bg" aria-hidden="true">
+    <img src="https://personalberatung.b--p.de/hubfs/bauleiter-tiefbau/bauleiter-hero.jpg" alt="">
+    <span class="bp-contact__overlay bp-contact__overlay--v"></span>
+    <span class="bp-contact__overlay bp-contact__overlay--h"></span>
+  </div>
+
+  <div class="bp-contact__inner">
+    <div class="bp-contact__head">
+      <div class="bp-contact__eyebrow">Jetzt bewerben</div>
+      <h2 class="bp-contact__title">
+        Klingt gut?
+        <br><span class="bp-contact__title--accent">Dann bewirb dich online.</span>
+      </h2>
+      <p class="bp-contact__sub">
+        Nicht sicher, ob's passt? Musst du auch nicht. Fülle das Formular aus,
+        wir melden uns telefonisch bei dir — danach entscheidest du.
+      </p>
+    </div>
+
+    <div class="bp-contact__grid">
+      <div class="bp-contact__side">
+        <div class="bp-contact__side-label">So geht's weiter</div>
+        <ol class="bp-contact__steps">
+          <li>
+            <span class="bp-contact__step-num">1</span>
+            <div>
+              <div class="bp-contact__step-title">Formular ausfüllen</div>
+              <div class="bp-contact__step-body">Ein paar Angaben genügen. Wir melden uns telefonisch bei dir.</div>
+            </div>
+          </li>
+          <li>
+            <span class="bp-contact__step-num">2</span>
+            <div>
+              <div class="bp-contact__step-title">Vorstellung beim Unternehmen</div>
+              <div class="bp-contact__step-body">Erst nach deinem OK stellen wir dich vor.</div>
+            </div>
+          </li>
+          <li>
+            <span class="bp-contact__step-num">3</span>
+            <div>
+              <div class="bp-contact__step-title">Direkt beim Unternehmen anfangen</div>
+              <div class="bp-contact__step-body">Unbefristet und direkt angestellt. Ohne Umweg.</div>
+            </div>
+          </li>
+        </ol>
+
+        <div class="bp-contact__contact">
+          <div class="bp-contact__contact-label">Direkt anrufen oder schreiben</div>
+          <a href="mailto:anja.mizouri@b--p.de" class="bp-contact__contact-link">
+            <span class="bp-contact__contact-icon">✉</span>
+            anja.mizouri@b--p.de
+          </a>
+          <a href="tel:06817619925" class="bp-contact__contact-link">
+            <span class="bp-contact__contact-icon">☎</span>
+            0681 7619925
+          </a>
+        </div>
+      </div>
+
+      <div class="bp-contact__formwrap">
+        <form class="bp-contact__form" id="bp-bewerbung-form" novalidate data-endpoint="/api/bewerbung">
+          <div class="bp-contact__field">
+            <label for="bp-name">Name <span class="bp-contact__req">*</span></label>
+            <input type="text" id="bp-name" name="name" required autocomplete="name">
+            <p class="bp-contact__error"></p>
+          </div>
+
+          <div class="bp-contact__field">
+            <label for="bp-phone">Telefon <span class="bp-contact__req">*</span></label>
+            <input type="tel" id="bp-phone" name="phone" required autocomplete="tel" inputmode="tel">
+            <p class="bp-contact__error"></p>
+          </div>
+
+          <div class="bp-contact__field">
+            <label for="bp-email">E-Mail</label>
+            <input type="email" id="bp-email" name="email" autocomplete="email">
+            <p class="bp-contact__error"></p>
+          </div>
+
+          <div class="bp-contact__field">
+            <label for="bp-message">Nachricht (optional)</label>
+            <textarea id="bp-message" name="message" rows="3" placeholder="Was machst du aktuell? Was interessiert dich?"></textarea>
+          </div>
+
+          <div class="bp-contact__field">
+            <label>Lebenslauf (optional)</label>
+            <label class="bp-contact__upload" id="bp-upload">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="17 8 12 3 7 8"/>
+                <line x1="12" y1="3" x2="12" y2="15"/>
+              </svg>
+              <span class="bp-contact__upload-label">
+                Datei anhängen <span class="bp-contact__upload-hint">(PDF, DOC, JPG · max. 10 MB)</span>
+              </span>
+              <input type="file" id="bp-cv" name="cv" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" hidden>
+            </label>
+            <div class="bp-contact__file" id="bp-file" hidden>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/>
+                <polyline points="14 2 14 8 20 8"/>
+              </svg>
+              <span class="bp-contact__file-name" id="bp-file-name"></span>
+              <button type="button" class="bp-contact__file-remove" id="bp-file-remove" aria-label="Anhang entfernen">×</button>
+            </div>
+            <p class="bp-contact__error" id="bp-file-error"></p>
+          </div>
+
+          <button type="submit" class="bp-contact__submit">
+            <span class="bp-contact__submit-label">Bewerbung senden</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <p class="bp-contact__foot">
+            Kein Anschreiben nötig. Vertraulich behandelt. Weitergabe an das
+            Unternehmen erst nach deiner Freigabe.
+          </p>
+
+          <div class="bp-contact__success" role="status" aria-live="polite">
+            <div class="bp-contact__success-badge">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h4>Danke!</h4>
+            <p>Deine Bewerbung ist eingegangen. Wir melden uns telefonisch bei dir.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* Schriften werden zentral in 01-nav geladen */
+.bp-contact{
+  --ink:#0F1114;
+  --page:#FAF7F1;
+  --white:#FFFFFF;
+  --ink-hard:#1A1A1A;
+  --ink-soft:#2E2E2C;
+  --ink-muted:#6B6B68;
+  --line:#E5E1D8;
+  --accent:#2F6DB3;
+  --gold:#EDA53F;
+  --gold-dark:#C88526;
+  --red:#B91C1C;
+  --font-sans:"Inter Tight","Inter",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --ease-out:cubic-bezier(0.23,1,0.32,1);
+
+  width:100vw;
+  margin-left:50%;
+  transform:translateX(-50%);
+  max-width:100vw;
+
+  position:relative;
+  overflow:hidden;
+  background:var(--ink);
+  color:#fff;
+  font-family:var(--font-sans);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.bp-contact *,
+.bp-contact *::before,
+.bp-contact *::after{ box-sizing:border-box; }
+.bp-contact img,
+.bp-contact svg{ display:block; max-width:100%; }
+.bp-contact a{ color:inherit; text-decoration:none; }
+
+.bp-contact__bg{ position:absolute; inset:0; z-index:0; }
+.bp-contact__bg img{
+  position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+  opacity:.70;
+}
+.bp-contact__overlay{ position:absolute; inset:0; pointer-events:none; }
+.bp-contact__overlay--v{
+  background:linear-gradient(180deg, rgba(15,17,20,.50) 0%, rgba(15,17,20,.60) 50%, rgba(15,17,20,1) 100%);
+}
+.bp-contact__overlay--h{
+  background:linear-gradient(90deg, rgba(15,17,20,.60) 0%, rgba(15,17,20,0) 55%, rgba(15,17,20,.40) 100%);
+}
+
+.bp-contact__inner{
+  position:relative; z-index:1;
+  max-width:1152px;
+  margin:0 auto;
+  padding:clamp(64px, 7vw, 80px) clamp(24px, 4vw, 40px);
+}
+
+.bp-contact__head{ max-width:640px; margin-bottom:48px; }
+.bp-contact__eyebrow{
+  font-weight:600; font-size:11.2px;
+  letter-spacing:.2em; text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:20px;
+}
+.bp-contact__title{
+  margin:0;
+  font-weight:800;
+  font-size:clamp(28px, 4vw, 48px);
+  line-height:1.05;
+  letter-spacing:-0.02em;
+}
+.bp-contact__title--accent{ color:var(--gold); }
+.bp-contact__sub{
+  margin:20px 0 0;
+  font-size:clamp(16px, 1.4vw, 18px);
+  line-height:1.6;
+  color:rgba(255,255,255,.75);
+}
+
+/* Grid */
+.bp-contact__grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+}
+
+/* Side (Steps + Contact) */
+.bp-contact__side-label{
+  font-weight:600; font-size:11.2px;
+  letter-spacing:.15em; text-transform:uppercase;
+  color:var(--gold);
+  margin-bottom:20px;
+}
+.bp-contact__steps{
+  list-style:none; margin:0; padding:0;
+  display:flex; flex-direction:column; gap:20px;
+}
+.bp-contact__steps li{
+  display:flex; gap:16px;
+}
+.bp-contact__step-num{
+  flex-shrink:0;
+  width:36px; height:36px;
+  border-radius:50%;
+  background:rgba(237,165,63,.15);
+  border:1px solid rgba(237,165,63,.40);
+  color:var(--gold);
+  font-weight:700; font-size:14px;
+  display:flex; align-items:center; justify-content:center;
+}
+.bp-contact__step-title{
+  font-weight:600; font-size:14.5px; color:#fff;
+}
+.bp-contact__step-body{
+  font-size:14px; line-height:1.6;
+  color:rgba(255,255,255,.60);
+  margin-top:2px;
+}
+.bp-contact__contact{
+  margin-top:40px; padding-top:24px;
+  border-top:1px solid rgba(255,255,255,.10);
+}
+.bp-contact__contact-label{
+  font-size:11.5px; letter-spacing:.14em; text-transform:uppercase;
+  color:rgba(255,255,255,.40);
+  margin-bottom:12px;
+}
+.bp-contact__contact-link{
+  display:flex; align-items:center; gap:12px;
+  padding:6px 0;
+  color:rgba(255,255,255,.80);
+  font-size:14.5px;
+  transition:color 200ms ease;
+}
+.bp-contact__contact-icon{ color:var(--gold); }
+.bp-contact__contact-link:hover{ color:var(--gold); }
+
+/* Formwrap */
+.bp-contact__formwrap{ position:relative; }
+.bp-contact__form{
+  position:relative;
+  background:var(--white);
+  color:var(--ink-hard);
+  border-radius:16px;
+  padding:28px 28px 24px;
+  overflow:hidden;
+}
+.bp-contact__field{ margin-bottom:18px; }
+.bp-contact__field label{
+  display:block; font-weight:600; font-size:14px;
+  color:var(--ink-hard);
+  margin-bottom:8px;
+}
+.bp-contact__req{ color:var(--accent); }
+.bp-contact__field input,
+.bp-contact__field textarea{
+  width:100%;
+  padding:12px 16px;
+  background:var(--page);
+  border:1px solid var(--line);
+  border-radius:8px;
+  font-family:var(--font-sans); font-size:15px;
+  color:var(--ink-hard);
+  transition:border-color 220ms var(--ease-out);
+}
+.bp-contact__field textarea{ resize:vertical; }
+.bp-contact__field input::placeholder,
+.bp-contact__field textarea::placeholder{ color:var(--ink-muted); }
+.bp-contact__field input:focus,
+.bp-contact__field textarea:focus{
+  outline:0;
+  border-color:var(--accent);
+}
+.bp-contact__error{
+  margin:6px 0 0;
+  font-size:12.5px; color:var(--red);
+  min-height:1px;
+  display:none;
+}
+.bp-contact__field.is-invalid .bp-contact__error{ display:block; }
+.bp-contact__field.is-invalid input,
+.bp-contact__field.is-invalid textarea{ border-color:var(--red); }
+
+/* Upload */
+.bp-contact__upload{
+  display:flex; align-items:center; gap:12px;
+  padding:12px 16px;
+  background:var(--page);
+  border:1px dashed var(--line);
+  border-radius:8px;
+  cursor:pointer;
+  transition:border-color 220ms var(--ease-out);
+}
+.bp-contact__upload:hover{ border-color:var(--accent); }
+.bp-contact__upload svg{ width:18px; height:18px; color:var(--ink-muted); flex-shrink:0; }
+.bp-contact__upload-label{ flex:1; font-size:14px; color:var(--ink-soft); }
+.bp-contact__upload-hint{ color:var(--ink-muted); }
+
+.bp-contact__file{
+  display:flex; align-items:center; gap:12px;
+  padding:12px 16px;
+  background:var(--page);
+  border:1px solid var(--line);
+  border-radius:8px;
+}
+.bp-contact__file svg{ width:18px; height:18px; color:var(--accent); flex-shrink:0; }
+.bp-contact__file-name{
+  flex:1; font-size:14px; color:var(--ink-hard);
+  overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+}
+.bp-contact__file-remove{
+  background:none; border:0; cursor:pointer;
+  font-size:22px; line-height:1;
+  color:var(--ink-muted); padding:0 4px;
+  transition:color 200ms ease;
+}
+.bp-contact__file-remove:hover{ color:var(--ink-hard); }
+
+/* Submit */
+.bp-contact__submit{
+  width:100%;
+  display:flex; align-items:center; justify-content:center; gap:8px;
+  padding:14px 24px;
+  background:var(--gold); color:var(--ink-hard);
+  border:0; border-radius:9999px;
+  font-family:var(--font-sans); font-weight:700; font-size:15.5px;
+  cursor:pointer;
+  transition:background-color 220ms var(--ease-out), color 220ms var(--ease-out);
+  margin-top:6px;
+}
+.bp-contact__submit svg{ width:14px; height:14px; transition:transform 220ms var(--ease-out); }
+.bp-contact__submit:hover svg{ transform:translateX(3px); }
+.bp-contact__submit:disabled{ opacity:.6; cursor:not-allowed; }
+@media (hover:hover) and (pointer:fine){
+  .bp-contact__submit:hover{ background:var(--gold-dark); color:#fff; }
+}
+.bp-contact__foot{
+  margin:16px 0 0;
+  font-size:11.5px; line-height:1.55;
+  color:var(--ink-muted);
+  text-align:center;
+}
+
+/* Success */
+.bp-contact__success{
+  position:absolute; inset:0;
+  background:var(--white);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;
+  padding:40px 28px;
+  opacity:0; visibility:hidden;
+  transform:scale(.98);
+  transition:opacity 260ms var(--ease-out), transform 260ms var(--ease-out), visibility 0s linear 260ms;
+}
+.bp-contact__success.is-on{
+  opacity:1; visibility:visible; transform:none;
+  transition:opacity 320ms var(--ease-out), transform 320ms var(--ease-out), visibility 0s;
+}
+.bp-contact__success-badge{
+  width:56px; height:56px; border-radius:50%;
+  background:rgba(237,165,63,.15);
+  color:var(--gold-dark);
+  display:inline-flex; align-items:center; justify-content:center;
+  margin-bottom:16px;
+}
+.bp-contact__success-badge svg{ width:22px; height:22px; }
+.bp-contact__success h4{
+  margin:0 0 6px;
+  font-weight:700; font-size:20px; color:var(--ink-hard);
+}
+.bp-contact__success p{
+  margin:0; font-size:14px; color:var(--ink-soft);
+  max-width:360px;
+}
+
+/* Focus */
+.bp-contact :focus-visible{
+  outline:2px solid var(--gold);
+  outline-offset:3px;
+  border-radius:4px;
+}
+
+@media (max-width:900px){
+  .bp-contact__grid{ grid-template-columns:1fr; gap:48px; }
+}
+@media (max-width:520px){
+  .bp-contact__form{ padding:24px 22px 22px; }
+}
+</style>
+
+<script>
+(function(){
+  var wraps = document.querySelectorAll('.bp-contact');
+  var wrap = wraps[wraps.length - 1];
+  if(!wrap) return;
+
+  var form   = wrap.querySelector('#bp-bewerbung-form');
+  if(!form) return;
+
+  var success   = wrap.querySelector('.bp-contact__success');
+  var submitBtn = wrap.querySelector('.bp-contact__submit');
+  var submitLbl = wrap.querySelector('.bp-contact__submit-label');
+  var upload    = wrap.querySelector('#bp-upload');
+  var cvInput   = wrap.querySelector('#bp-cv');
+  var fileBox   = wrap.querySelector('#bp-file');
+  var fileName  = wrap.querySelector('#bp-file-name');
+  var fileRem   = wrap.querySelector('#bp-file-remove');
+  var fileErr   = wrap.querySelector('#bp-file-error');
+  var MAX_MB    = 10;
+
+  function showFile(f){
+    fileName.textContent = f.name;
+    fileBox.hidden = false;
+    upload.style.display = 'none';
+  }
+  function clearFile(){
+    cvInput.value = '';
+    fileBox.hidden = true;
+    upload.style.display = '';
+    fileErr.style.display = 'none';
+    fileErr.textContent = '';
+  }
+
+  cvInput.addEventListener('change', function(){
+    var f = cvInput.files && cvInput.files[0];
+    if(!f) return;
+    if(f.size > MAX_MB * 1024 * 1024){
+      fileErr.textContent = 'Datei zu groß (max. ' + MAX_MB + ' MB).';
+      fileErr.style.display = 'block';
+      cvInput.value = '';
+      return;
+    }
+    fileErr.style.display = 'none';
+    showFile(f);
+  });
+  fileRem.addEventListener('click', clearFile);
+
+  function setError(field, msg){
+    var w = field.closest('.bp-contact__field');
+    if(!w) return;
+    w.classList.toggle('is-invalid', !!msg);
+    var err = w.querySelector('.bp-contact__error');
+    if(err) err.textContent = msg || '';
+  }
+  function validPhone(v){
+    var digits = v.replace(/\D+/g, '');
+    return /^[+\d\s\-\/()]+$/.test(v) && digits.length >= 6;
+  }
+  function validEmail(v){
+    if(!v) return true;
+    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name  = form.querySelector('#bp-name');
+    var phone = form.querySelector('#bp-phone');
+    var email = form.querySelector('#bp-email');
+    var ok = true;
+
+    if(!name.value.trim()){ setError(name, 'Bitte gib deinen Namen an.'); ok = false; } else setError(name, '');
+    if(!phone.value.trim()){ setError(phone, 'Bitte gib deine Telefonnummer an.'); ok = false; }
+    else if(!validPhone(phone.value.trim())){ setError(phone, 'Bitte prüfe die Telefonnummer.'); ok = false; }
+    else setError(phone, '');
+    if(email.value && !validEmail(email.value.trim())){ setError(email, 'Bitte prüfe die E-Mail-Adresse.'); ok = false; } else setError(email, '');
+
+    if(!ok){
+      var firstInvalid = form.querySelector('.bp-contact__field.is-invalid input');
+      if(firstInvalid) firstInvalid.focus();
+      return;
+    }
+
+    submitBtn.disabled = true;
+    if(submitLbl) submitLbl.textContent = 'Wird gesendet …';
+
+    var fd = new FormData(form);
+    var endpoint = form.getAttribute('data-endpoint') || '/api/bewerbung';
+
+    fetch(endpoint, { method:'POST', body:fd })
+      .then(function(r){
+        if(!r.ok) throw new Error('http ' + r.status);
+        if(success) success.classList.add('is-on');
+      })
+      .catch(function(){
+        submitBtn.disabled = false;
+        if(submitLbl) submitLbl.textContent = 'Bewerbung senden';
+        alert('Etwas ist schiefgelaufen. Bitte per E-Mail an anja.mizouri@b--p.de.');
+      });
+  });
+})();
+</script>
