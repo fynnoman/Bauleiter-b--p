@@ -36,9 +36,6 @@ export function Hero() {
             Jetzt online bewerben
             <span aria-hidden>→</span>
           </a>
-          <p className="mt-3 text-sm text-white/60">
-            Kein Anschreiben, kein Lebenslauf nötig.
-          </p>
         </div>
 
         <div className="mt-10 pt-8 border-t border-white/10 flex flex-wrap gap-x-8 gap-y-3 text-sm text-white/75">
