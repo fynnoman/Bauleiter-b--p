@@ -1,10 +1,10 @@
 export function Nav() {
   return (
-    <header className="border-b border-line bg-page">
+    <header className="border-b border-[#8F887E] bg-[#B0A99C]">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <a href="#top" className="flex items-center" aria-label="B+P Beratung und Personal">
           <img
-            src="/bp-logo.jpg"
+            src="https://personalberatung.b--p.de/hubfs/0b-p_Logo_238x120.png"
             alt="B+P Beratung und Personal"
             className="h-12 md:h-14 w-auto"
           />

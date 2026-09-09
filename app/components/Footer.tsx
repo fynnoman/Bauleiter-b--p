@@ -5,7 +5,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div className="flex items-center gap-4">
             <img
-              src="/bp-logo.jpg"
+              src="https://personalberatung.b--p.de/hubfs/0b-p_Logo_238x120.png"
               alt="B+P Beratung und Personal"
               className="h-12 w-auto"
             />
