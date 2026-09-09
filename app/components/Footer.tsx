@@ -10,7 +10,7 @@ export function Footer() {
               className="h-12 w-auto"
             />
             <div className="text-xs text-ink-muted hidden sm:block">
-              B+P Beratung und Personal
+              b+p Beratung und Personal
             </div>
           </div>
 
