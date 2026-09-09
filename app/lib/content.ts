@@ -106,7 +106,7 @@ export const profileFits = [
 ];
 
 export const images = {
-  hero: "/images/bauleiter-hero.jpg",
-  break: "/images/bauleiter-team.jpg",
-  cta: "/images/bauleiter-hero.jpg"
+  hero: "https://personalberatung.b--p.de/hubfs/7389c54f-ff8d-4065-a326-eba0df6a197e.png",
+  break: "https://personalberatung.b--p.de/hubfs/946be08a-e413-4950-85ff-457e68f9f616.png",
+  cta: "https://personalberatung.b--p.de/hubfs/7389c54f-ff8d-4065-a326-eba0df6a197e.png"
 };
