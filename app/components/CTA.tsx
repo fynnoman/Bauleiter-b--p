@@ -42,23 +42,23 @@ export function CTA() {
       <div className="relative mx-auto max-w-5xl px-6 py-16 md:py-20">
         <div className="max-w-2xl mb-12">
           <div className="text-xs font-semibold uppercase tracking-[0.2em] text-gold mb-5">
-            Kurz melden
+            Jetzt bewerben
           </div>
           <h2 className="text-3xl md:text-5xl font-extrabold leading-[1.05] tracking-tight text-white">
             Klingt gut?
             <br />
-            <span className="text-gold">Dann meld dich einfach.</span>
+            <span className="text-gold">Dann bewirb dich online.</span>
           </h2>
           <p className="mt-5 text-base md:text-lg text-white/75 leading-relaxed">
-            Nicht sicher, ob's passt? Musst du auch nicht. Wir reden kurz
-            unverbindlich am Telefon — danach entscheidest du.
+            Nicht sicher, ob's passt? Musst du auch nicht. Fülle das Formular
+            aus, wir melden uns telefonisch bei dir — danach entscheidest du.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           <div>
             <div className="text-xs font-semibold uppercase tracking-[0.15em] text-gold mb-5">
-              So läuft's ab
+              So geht's weiter
             </div>
             <ol className="space-y-4">
               {brand.process.map((step, i) => (
@@ -115,7 +115,8 @@ export function CTA() {
                 </div>
                 <h3 className="text-xl font-bold text-ink mb-2">Danke!</h3>
                 <p className="text-sm text-ink-soft max-w-sm mx-auto">
-                  Deine Nachricht ist da. Wir melden uns in Kürze bei dir.
+                  Deine Bewerbung ist eingegangen. Wir melden uns telefonisch
+                  bei dir.
                 </p>
               </div>
             ) : (
@@ -144,7 +145,7 @@ export function CTA() {
                 />
                 <div>
                   <label className="block text-sm font-semibold text-ink mb-2">
-                    Kurz was zu dir (optional)
+                    Nachricht (optional)
                   </label>
                   <textarea
                     value={form.message}
@@ -152,7 +153,7 @@ export function CTA() {
                       setForm({ ...form, message: e.target.value })
                     }
                     rows={3}
-                    placeholder="Was machst du aktuell?"
+                    placeholder="Was machst du aktuell? Was interessiert dich?"
                     className="w-full rounded-lg bg-page border border-line px-4 py-3 text-ink placeholder:text-ink-muted focus:border-accent focus:outline-none resize-none"
                   />
                 </div>
@@ -162,12 +163,14 @@ export function CTA() {
                   disabled={state === "sending"}
                   className="w-full rounded-full bg-gold text-ink py-4 text-base font-bold hover:bg-gold-dark hover:text-white disabled:opacity-60 transition-colors"
                 >
-                  {state === "sending" ? "Wird gesendet …" : "Kurz melden →"}
+                  {state === "sending"
+                    ? "Wird gesendet …"
+                    : "Bewerbung senden →"}
                 </button>
 
                 <p className="text-xs text-ink-muted leading-relaxed pt-1 text-center">
-                  Keine Bewerbung nötig. Vertraulich. Weitergabe an das
-                  Unternehmen erst nach deiner Freigabe.
+                  Kein Anschreiben nötig. Vertraulich behandelt. Weitergabe an
+                  das Unternehmen erst nach deiner Freigabe.
                 </p>
               </form>
             )}

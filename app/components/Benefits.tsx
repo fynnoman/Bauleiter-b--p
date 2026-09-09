@@ -38,7 +38,7 @@ export function Benefits() {
             Was du davon hast
           </div>
           <h2 className="text-3xl md:text-4xl font-extrabold text-ink leading-[1.1] tracking-tight">
-            Kurz gesagt.
+            Die wichtigsten Punkte.
           </h2>
         </div>
 

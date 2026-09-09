@@ -10,8 +10,8 @@ export const brand = {
   },
   process: [
     {
-      title: "Kurzes Gespräch mit uns",
-      body: "Unverbindlich. Wir klären am Telefon, ob es passt."
+      title: "Formular ausfüllen",
+      body: "Ein paar Angaben genügen. Wir melden uns telefonisch bei dir."
     },
     {
       title: "Vorstellung beim Unternehmen",
@@ -90,7 +90,7 @@ export const benefitsNew: {
   icon: "pin" | "team" | "gear" | "trend";
 }[] = [
   { title: "Regional", body: "Baustellen fast alle im Saarland.", icon: "pin" },
-  { title: "Eigene Kolonne", body: "Direkt mit dem Team, kurze Wege.", icon: "team" },
+  { title: "Eigene Kolonne", body: "Direkte Zusammenarbeit mit dem Team.", icon: "team" },
   { title: "Moderne Technik", body: "Aktueller Maschinenpark, GPS-Steuerung.", icon: "gear" },
   { title: "Langfristig", body: "Feste Standorte, Projekte über Jahre.", icon: "trend" }
 ];

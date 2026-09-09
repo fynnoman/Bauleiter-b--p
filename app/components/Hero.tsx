@@ -33,11 +33,11 @@ export function Hero() {
             href="#kontakt"
             className="inline-flex items-center gap-2 rounded-full bg-gold text-ink px-7 py-4 text-base font-bold hover:bg-white transition-colors"
           >
-            Kurz kennenlernen
+            Jetzt online bewerben
             <span aria-hidden>→</span>
           </a>
           <p className="mt-3 text-sm text-white/60">
-            Keine klassische Bewerbung. Erst einmal reden.
+            Kein Anschreiben, kein Lebenslauf nötig.
           </p>
         </div>
 

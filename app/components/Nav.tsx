@@ -14,7 +14,7 @@ export function Nav() {
           href="#kontakt"
           className="hidden sm:inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-white hover:bg-accent-dark transition-colors"
         >
-          Kurz melden
+          Jetzt bewerben
         </a>
       </div>
     </header>
