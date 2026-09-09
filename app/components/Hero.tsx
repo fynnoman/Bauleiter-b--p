@@ -7,9 +7,10 @@ export function Hero() {
         <img
           src={images.hero}
           alt="Baustelle im Saarland"
-          className="h-full w-full object-cover opacity-55"
+          className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/60 to-ink" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink/45 via-ink/20 to-ink/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink/60 via-transparent to-transparent" />
       </div>
 
       <div className="relative mx-auto max-w-5xl px-6 pt-14 pb-20 md:pt-16 md:pb-24">
@@ -18,7 +19,7 @@ export function Hero() {
           {job.eyebrow}
         </div>
 
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.02] text-white tracking-tight">
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[1.02] text-white tracking-tight drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)]">
           {job.headline1}
           <br />
           <span className="text-gold">{job.headline2}</span>

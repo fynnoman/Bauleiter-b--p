@@ -57,9 +57,10 @@ export function CTA() {
         <img
           src={images.cta}
           alt=""
-          className="h-full w-full object-cover opacity-20"
+          className="h-full w-full object-cover opacity-70"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/85 via-ink/90 to-ink" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-ink/60 to-ink" />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink/60 via-transparent to-ink/40" />
       </div>
 
       <div className="relative mx-auto max-w-5xl px-6 py-16 md:py-20">

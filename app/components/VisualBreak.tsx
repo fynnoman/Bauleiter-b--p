@@ -6,14 +6,15 @@ export function VisualBreak() {
       <div className="absolute inset-0">
         <img
           src={images.break}
-          alt="Bagger und Maschinenpark auf der Baustelle"
-          className="h-full w-full object-cover opacity-45"
+          alt="Zwei Bauleiter auf der Baustelle im Saarland"
+          className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/60 via-ink/50 to-ink/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink/75 via-ink/30 to-ink/10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink/20 via-transparent to-ink/40" />
       </div>
 
       <div className="relative mx-auto max-w-5xl px-6 py-24 md:py-32">
-        <h2 className="text-4xl md:text-6xl font-extrabold leading-[1.05] tracking-tight text-white">
+        <h2 className="text-4xl md:text-6xl font-extrabold leading-[1.05] tracking-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)]">
           Deine Baustelle.
           <br />
           Deine Truppe.
