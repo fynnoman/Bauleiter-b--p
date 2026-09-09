@@ -3,8 +3,13 @@
 import { useState } from "react";
 import { brand, images } from "../lib/content";
 
+const MAX_FILE_SIZE_MB = 10;
+const ALLOWED_EXT = [".pdf", ".doc", ".docx", ".jpg", ".jpeg", ".png"];
+
 export function CTA() {
   const [state, setState] = useState<"idle" | "sending" | "done" | "error">("idle");
+  const [fileError, setFileError] = useState<string | null>(null);
+  const [file, setFile] = useState<File | null>(null);
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -12,14 +17,32 @@ export function CTA() {
     message: ""
   });
 
+  const onFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const f = e.target.files?.[0];
+    if (!f) return setFile(null);
+    if (f.size > MAX_FILE_SIZE_MB * 1024 * 1024) {
+      setFileError(`Datei zu groß (max. ${MAX_FILE_SIZE_MB} MB).`);
+      e.target.value = "";
+      return;
+    }
+    setFileError(null);
+    setFile(f);
+  };
+
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     setState("sending");
     try {
+      const fd = new FormData();
+      fd.append("name", form.name);
+      fd.append("email", form.email);
+      fd.append("phone", form.phone);
+      fd.append("message", form.message);
+      if (file) fd.append("cv", file);
+
       const res = await fetch("/api/bewerbung", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form)
+        body: fd
       });
       if (!res.ok) throw new Error("Fehler");
       setState("done");
@@ -156,6 +179,77 @@ export function CTA() {
                     placeholder="Was machst du aktuell? Was interessiert dich?"
                     className="w-full rounded-lg bg-page border border-line px-4 py-3 text-ink placeholder:text-ink-muted focus:border-accent focus:outline-none resize-none"
                   />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold text-ink mb-2">
+                    Lebenslauf (optional)
+                  </label>
+                  {!file ? (
+                    <label className="flex items-center gap-3 rounded-lg bg-page border border-dashed border-line px-4 py-3 cursor-pointer hover:border-accent transition-colors">
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.8"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="text-ink-muted shrink-0"
+                      >
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                        <polyline points="17 8 12 3 7 8" />
+                        <line x1="12" y1="3" x2="12" y2="15" />
+                      </svg>
+                      <span className="flex-1 text-sm text-ink-soft">
+                        Datei anhängen{" "}
+                        <span className="text-ink-muted">
+                          (PDF, DOC, JPG · max. {MAX_FILE_SIZE_MB} MB)
+                        </span>
+                      </span>
+                      <input
+                        type="file"
+                        accept={ALLOWED_EXT.join(",")}
+                        onChange={onFileChange}
+                        className="hidden"
+                      />
+                    </label>
+                  ) : (
+                    <div className="flex items-center gap-3 rounded-lg bg-page border border-line px-4 py-3">
+                      <svg
+                        width="18"
+                        height="18"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#2F6DB3"
+                        strokeWidth="1.8"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="shrink-0"
+                      >
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z" />
+                        <polyline points="14 2 14 8 20 8" />
+                      </svg>
+                      <span className="flex-1 text-sm text-ink truncate">
+                        {file.name}
+                      </span>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setFile(null);
+                          setFileError(null);
+                        }}
+                        className="text-ink-muted hover:text-ink text-xl leading-none px-1"
+                        aria-label="Anhang entfernen"
+                      >
+                        ×
+                      </button>
+                    </div>
+                  )}
+                  {fileError && (
+                    <p className="mt-2 text-xs text-red-600">{fileError}</p>
+                  )}
                 </div>
 
                 <button

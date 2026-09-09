@@ -1,5 +1,3 @@
-import { brand } from "../lib/content";
-
 export function Footer() {
   return (
     <footer className="bg-page border-t border-line">
@@ -12,7 +10,7 @@ export function Footer() {
               className="h-12 w-auto"
             />
             <div className="text-xs text-ink-muted hidden sm:block">
-              Personalvermittlung · Bau · Technik
+              B+P Beratung und Personal
             </div>
           </div>
 
@@ -27,7 +25,8 @@ export function Footer() {
         </div>
 
         <div className="mt-6 pt-6 border-t border-line text-xs text-ink-muted">
-          © {new Date().getFullYear()} {brand.agency}. Alle Rechte vorbehalten.
+          © {new Date().getFullYear()} b+p Beratung und Personal. Alle Rechte
+          vorbehalten.
         </div>
       </div>
     </footer>
